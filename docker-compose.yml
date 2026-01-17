@@ -1,0 +1,17 @@
+services:
+    db:
+        image: postgres
+        ports:
+            - "5432:5432"
+        volumes:
+            - data:/var/lib/postgres
+        environment:
+            - POSTGRES_DB=gametrackerapi
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+        restart: always
+        container_name: db
+
+volumes:
+    data:
+        driver: local
